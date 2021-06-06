@@ -8,7 +8,7 @@ public class ornek : MonoBehaviour
     GameObject bul;
     public GameObject bulut2;
     public GameObject bulut3;
-    float sayac;
+    float sayac ;
     void Start()
     {
 
