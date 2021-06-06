@@ -29,5 +29,10 @@ public class Options : MonoBehaviour
         PlayerPrefs.SetFloat("mouseHassasiyet", hassasiyetDeger); //hassasiyet ayari
         PlayerPrefs.SetFloat("sensSlider", sensBar.value);
     }
+
+    public void option()
+    {
+        sensBar.gameObject.SetActive(true);
+    }
     
 }

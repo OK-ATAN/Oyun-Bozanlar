@@ -52,5 +52,19 @@ public class mouse : MonoBehaviour
         }
 
     }
+//----------menü-------------------------
+    public void devamEt()
+    {
+        oyunDevam = !oyunDevam;
+        MouseGizleme();
+    }
 
+    public void cik()
+    {
+        Application.Quit();
+    }
+
+
+
+//--------------------------------
 }

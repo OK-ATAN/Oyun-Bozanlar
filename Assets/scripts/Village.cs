@@ -19,6 +19,7 @@ public class Village : MonoBehaviour
     //------------------------------------
     public GameObject Balta;
     public GameObject Anahtar;
+    public Animator balta;
 
     void Start()
     {
@@ -57,9 +58,10 @@ public class Village : MonoBehaviour
         if(obj.Equals("Cifci") && HaveBalta && Konustumu)
         {
             print("Cifci");
-            playerControl.ButtonE.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
+                balta.SetBool("vur", true);
+                StartCoroutine(BaltaAlma());
                 killed = true;
                 Instantiate(Anahtar, Anahtar.transform.position,Anahtar.transform.rotation );
             }
@@ -71,6 +73,7 @@ public class Village : MonoBehaviour
             {
                 playerScript.enabled = false;
                 fare.enabled = false;
+                //öldürme animasyonu
                 Konustumu = true;
             }
         }
@@ -88,4 +91,10 @@ public class Village : MonoBehaviour
         playerControl.ButtonE.SetActive(false);
 
     }
+    IEnumerator BaltaHit()
+    {
+        yield return new WaitForSeconds(1.3f);
+        balta.SetBool("vur", false);
+    }
+    
 }
